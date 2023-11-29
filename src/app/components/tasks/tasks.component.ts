@@ -10,11 +10,24 @@ import { Task } from '../../Task'
 })
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
-  constructor(private takService : TaskService){}
+  constructor(private taskService : TaskService){}
   ngOnInit(): void {
-    this.takService.getTasks().subscribe((tasks)=>{
+    this.taskService.getTasks().subscribe((tasks)=>{
       this.tasks = tasks
     })
   }
+
+  deleteTask(task: Task): void {
+    this.taskService.deleteTask(task).subscribe(
+      () => {
+        // Update the component's tasks array
+        this.tasks = this.tasks.filter(t => t.id !== task.id);
+      },
+      error => {
+        console.error('Error deleting task:', error);
+      }
+    );
+  }
+  
 
 }
