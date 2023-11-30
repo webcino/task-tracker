@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../service/task.service';
-import { Task } from '../../Task'
-
+import { Task } from '../../Task';
 
 @Component({
   selector: 'app-tasks',
@@ -10,11 +9,13 @@ import { Task } from '../../Task'
 })
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
-  constructor(private taskService : TaskService){}
+
+  constructor(private taskService: TaskService) {}
+
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe((tasks)=>{
-      this.tasks = tasks
-    })
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
   }
 
   deleteTask(task: Task): void {
@@ -28,6 +29,10 @@ export class TasksComponent implements OnInit {
       }
     );
   }
-  
 
+  toggleReminder(task: Task): void {
+    // Toggle the reminder property
+    task.reminder = !task.reminder;
+    console.log(`Task '${task.text}' reminder is now ${task.reminder ? 'set' : 'unset'}`);
+  }
 }
