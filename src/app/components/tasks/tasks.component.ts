@@ -31,8 +31,8 @@ export class TasksComponent implements OnInit {
   }
 
   toggleReminder(task: Task): void {
-    // Toggle the reminder property
     task.reminder = !task.reminder;
-    console.log(`Task '${task.text}' reminder is now ${task.reminder ? 'set' : 'unset'}`);
+    this.taskService.updateTaskReminder(task).subscribe();
+    // console.log(`Task '${task.text}' reminder is now ${task.reminder ? 'set' : 'unset'}`);
   }
 }
