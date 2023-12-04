@@ -19,10 +19,16 @@
       "reminder": false
     },
     {
-      "id": 5,
-      "text": "Sun Set",
-      "day": "May 6th at 5:30pm",
-      "reminder": true
+      "text": "Fanie",
+      "day": "Jun 4th 1:09pm",
+      "reminder": true,
+      "id": 6
+    },
+    {
+      "text": "Meeting",
+      "day": "Dec 10th 4:30pm",
+      "reminder": true,
+      "id": 7
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/Task';
+import { TaskService } from 'src/app/service/task.service';
 
 @Component({
   selector: 'app-add-task',
@@ -13,7 +14,7 @@ export class AddTaskComponent implements OnInit {
   reminder: boolean = false;
 
 
-  constructor(){}
+  constructor(private taskService : TaskService){}
   ngOnInit(): void {
     
   }
@@ -31,7 +32,18 @@ export class AddTaskComponent implements OnInit {
     };
 
     this.onAddTask.emit(newTask);
-    console.log(newTask)
-  }
 
+    this.taskService.addTask(newTask).subscribe(
+      (addedTask: Task) => {
+        console.log('Task successfully added to the server:', addedTask);
+        // You can perform additional logic if needed
+      },
+      (error) => {
+        console.error('Error adding task to the server:', error);
+        // Handle the error as needed
+      }
+    );
+  }
+    
 }
+
