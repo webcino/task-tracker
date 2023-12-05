@@ -7,21 +7,15 @@
       "reminder": true
     },
     {
-      "text": "Fanie",
-      "day": "Jun 4th 1:09pm",
-      "reminder": true,
-      "id": 6
-    },
-    {
       "text": "Meeting",
       "day": "Dec 10th 4:30pm",
-      "reminder": true,
+      "reminder": false,
       "id": 7
     },
     {
       "text": "Family Meeting",
       "day": "Jun 30th at 1:09pm",
-      "reminder": false,
+      "reminder": true,
       "id": 8
     }
   ]
