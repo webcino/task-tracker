@@ -4,19 +4,7 @@
       "id": 1,
       "text": "Doctors Appointment",
       "day": "May 5th at 2:35pm",
-      "reminder": false
-    },
-    {
-      "id": 2,
-      "text": "Meeting at School",
-      "day": "May 6th at 1:30pm",
       "reminder": true
-    },
-    {
-      "id": 4,
-      "text": "Sun Set",
-      "day": "May 6th at 5:30pm",
-      "reminder": false
     },
     {
       "text": "Fanie",
@@ -29,6 +17,12 @@
       "day": "Dec 10th 4:30pm",
       "reminder": true,
       "id": 7
+    },
+    {
+      "text": "Family Meeting",
+      "day": "Jun 30th at 1:09pm",
+      "reminder": false,
+      "id": 8
     }
   ]
 }
