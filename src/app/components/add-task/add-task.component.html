@@ -1,4 +1,4 @@
-<form *ngIf="showAddTask" class="add-form" action="" (ngSubmit)="onSubmit(text.value, day.value, reminder.checked)">
+<form *ngIf="showAddTask" class="add-form"  (ngSubmit)="onSubmit(text.value, day.value, reminder.checked)">
     <div class="form-control">
       <label for="text">Task</label>
       <input type="text" name="text" #text id="text" placeholder="Add Task">

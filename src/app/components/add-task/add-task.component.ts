@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+
 import { Task } from 'src/app/Task';
 import { UIService } from 'src/app/service/ui.service';
 import { TaskService } from 'src/app/service/task.service';
@@ -18,7 +19,7 @@ export class AddTaskComponent implements OnInit {
   subscription! : Subscription
 
 
-  constructor(private taskService: TaskService, private uiService: UIService) {
+  constructor(private taskService: TaskService, private uiService: UIService ,private cdr: ChangeDetectorRef) {
     this.subscription = this.uiService.onToggle().subscribe(value => (this.showAddTask = value))
   }
 
@@ -29,6 +30,11 @@ export class AddTaskComponent implements OnInit {
   
   ngOnInit(): void {
     
+  }
+
+  // Call this method after updating the task list
+  updateView() {
+    this.cdr.detectChanges();
   }
 
   onSubmit(text: string, day: string, reminder: boolean) {
@@ -48,14 +54,14 @@ export class AddTaskComponent implements OnInit {
     this.taskService.addTask(newTask).subscribe(
       (addedTask: Task) => {
         console.log('Task successfully added to the server:', addedTask);
-        // You can perform additional logic if needed
       },
       (error) => {
         console.error('Error adding task to the server:', error);
         // Handle the error as needed
       }
-    );
-  }
+      );
+    }
+  this.updateView()
     
 }
 
