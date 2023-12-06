@@ -1,34 +1,3 @@
 {
-  "tasks": [
-    {
-      "text": "Meeting",
-      "day": "Dec 10th 4:30pm",
-      "reminder": false,
-      "id": 7
-    },
-    {
-      "text": "Shopping",
-      "day": "Jun 30th at 1:09pm",
-      "reminder": true,
-      "id": 9
-    },
-    {
-      "text": "update",
-      "day": "Jun 4th 1:09pm",
-      "reminder": false,
-      "id": 10
-    },
-    {
-      "text": "cow",
-      "day": "Jun 30th at 1:09pm",
-      "reminder": false,
-      "id": 11
-    },
-    {
-      "text": "Mom",
-      "day": "Jun 4th 1:09pm",
-      "reminder": true,
-      "id": 13
-    }
-  ]
+  "tasks": []
 }
